@@ -1,0 +1,24 @@
+# Environment variables
+.env
+drive/env.txt
+drive/env
+
+# Virtual environment
+venv/
+
+# Local database folder (not needed for cloud version)
+db/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Streamlit config
+.streamlit/
+
+# OS-specific
+.DS_Store
+
+# Large files
+*.pdf
+*.txt
