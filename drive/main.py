@@ -12,12 +12,11 @@ ZILLIZ_URI = os.getenv("ZILLIZ_CLUSTER_URI")
 ZILLIZ_TOKEN = os.getenv("ZILLIZ_API_TOKEN")
 
 prompt_template = """
-Você é um assistente de IA que funciona como um motor de busca em documentos. Sua tarefa é responder à pergunta do usuário com o **máximo de detalhes possível**, baseando-se **estrita, literal e exclusivamente no contexto fornecido.**
+Você é um assistente de IA especializado em zoonoses. Sua tarefa é responder à pergunta do usuário de forma clara e objetiva, baseando-se estritamente no contexto fornecido.
 
 **Regras Absolutas:**
-- **NUNCA** use seu conhecimento prévio.
-- **NUNCA** adicione informações que não estejam no contexto.
-- Sua resposta deve ser **completa e detalhada**, extraindo todas as informações relevantes do texto abaixo. Evite resumos curtos.
+- **Seja conciso e direto:** Foque nos pontos mais importantes para responder à pergunta. Evite respostas muito longas e detalhadas.
+- **NUNCA** use seu conhecimento prévio ou informações fora do contexto.
 - Se a resposta não puder ser encontrada no contexto, você **DEVE** responder exatamente e apenas com a frase: "Com base nos documentos fornecidos, não encontrei informações para responder a esta pergunta."
 - Não invente respostas.
 
@@ -27,7 +26,7 @@ Você é um assistente de IA que funciona como um motor de busca em documentos. 
 **Pergunta do Usuário:**
 {pergunta}
 
-**Sua Resposta Completa e Detalhada, Fiel ao Contexto:**
+**Sua Resposta Concisa e Direta:**
 """
 
 def obter_resposta_ia(pergunta: str):
@@ -49,7 +48,7 @@ def obter_resposta_ia(pergunta: str):
 
     # Realiza a busca por similaridade
     # Nota: A Zilliz usa uma pontuação de distância (menor é melhor).
-    resultados = db.similarity_search_with_score(pergunta, k=4)
+    resultados = db.similarity_search_with_score(pergunta, k=2)
 
     # Ajusta o limiar para a pontuação de distância. Uma pontuação baixa significa alta relevância.
     # Usamos > 1.0 como um limiar para resultados ruins (muito distantes).
@@ -62,7 +61,7 @@ def obter_resposta_ia(pergunta: str):
     prompt = ChatPromptTemplate.from_template(prompt_template)
     prompt_formatado = prompt.invoke({"pergunta": pergunta, "base_conhecimento": base_conhecimento})
 
-    modelo = ChatOpenAI(temperature=0)
+    modelo = ChatOpenAI(model_name="gpt-4o-mini", temperature=0, max_tokens=150)
     resposta = modelo.invoke(prompt_formatado)
 
     return resposta.content

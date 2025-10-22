@@ -1,0 +1,65 @@
+# Use docs programmatically
+
+> Connect LangChain documentation to your AI tools and workflows
+
+We want to make our documentation as accessible as possible. We've included several ways for you to use these docs programmatically through AI assistants, code editors, and direct integrations, such as Model Context Protocol (MCP).
+
+## Quick access options
+
+On any page in our documentation, you'll find a contextual menu dropdown in the top right corner:
+
+<img className="block dark:hidden" src="https://mintcdn.com/langchain-5e9cc07a/jKM-tvbl7XiR347g/images/copy-page-light.png?fit=max&auto=format&n=jKM-tvbl7XiR347g&q=85&s=81d6cf67dc039d588707bd97ee3f3a72" alt="Copy page light mode" data-og-width="1584" width="1584" data-og-height="942" height="942" data-path="images/copy-page-light.png" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/langchain-5e9cc07a/jKM-tvbl7XiR347g/images/copy-page-light.png?w=280&fit=max&auto=format&n=jKM-tvbl7XiR347g&q=85&s=902825688c6e023f45eaba6b0b3d13da 280w, https://mintcdn.com/langchain-5e9cc07a/jKM-tvbl7XiR347g/images/copy-page-light.png?w=560&fit=max&auto=format&n=jKM-tvbl7XiR347g&q=85&s=979bdc4cd4a3b5f33fe6b1a5dd29997b 560w, https://mintcdn.com/langchain-5e9cc07a/jKM-tvbl7XiR347g/images/copy-page-light.png?w=840&fit=max&auto=format&n=jKM-tvbl7XiR347g&q=85&s=57a7e798b07eb268e70c802cd43749d7 840w, https://mintcdn.com/langchain-5e9cc07a/jKM-tvbl7XiR347g/images/copy-page-light.png?w=1100&fit=max&auto=format&n=jKM-tvbl7XiR347g&q=85&s=f704840d44b7e9774eb49db0a703b705 1100w, https://mintcdn.com/langchain-5e9cc07a/jKM-tvbl7XiR347g/images/copy-page-light.png?w=1650&fit=max&auto=format&n=jKM-tvbl7XiR347g&q=85&s=4d98bb19b5d5c2ea638001a4aa1099bf 1650w, https://mintcdn.com/langchain-5e9cc07a/jKM-tvbl7XiR347g/images/copy-page-light.png?w=2500&fit=max&auto=format&n=jKM-tvbl7XiR347g&q=85&s=978ebb382704736d29fd7f3b0b868b15 2500w" />
+
+<img className="hidden dark:block" src="https://mintcdn.com/langchain-5e9cc07a/jKM-tvbl7XiR347g/images/copy-page-dark.png?fit=max&auto=format&n=jKM-tvbl7XiR347g&q=85&s=9257e0b3480b22cdaf56b5c70305124d" alt="Copy page dark mode" data-og-width="1578" width="1578" data-og-height="942" height="942" data-path="images/copy-page-dark.png" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/langchain-5e9cc07a/jKM-tvbl7XiR347g/images/copy-page-dark.png?w=280&fit=max&auto=format&n=jKM-tvbl7XiR347g&q=85&s=f1590a0d8b09b6623ebcbee997342351 280w, https://mintcdn.com/langchain-5e9cc07a/jKM-tvbl7XiR347g/images/copy-page-dark.png?w=560&fit=max&auto=format&n=jKM-tvbl7XiR347g&q=85&s=6941fbdda73138032658d45291367358 560w, https://mintcdn.com/langchain-5e9cc07a/jKM-tvbl7XiR347g/images/copy-page-dark.png?w=840&fit=max&auto=format&n=jKM-tvbl7XiR347g&q=85&s=d839ad6b6dc3e7b1a0e2c688cac54f98 840w, https://mintcdn.com/langchain-5e9cc07a/jKM-tvbl7XiR347g/images/copy-page-dark.png?w=1100&fit=max&auto=format&n=jKM-tvbl7XiR347g&q=85&s=65846b7b7c9b3afe40407c0f6d0b5447 1100w, https://mintcdn.com/langchain-5e9cc07a/jKM-tvbl7XiR347g/images/copy-page-dark.png?w=1650&fit=max&auto=format&n=jKM-tvbl7XiR347g&q=85&s=311120f01d56f4620ec759e2d7c60f47 1650w, https://mintcdn.com/langchain-5e9cc07a/jKM-tvbl7XiR347g/images/copy-page-dark.png?w=2500&fit=max&auto=format&n=jKM-tvbl7XiR347g&q=85&s=b5666dfbcd4a7a6a821670f85f79d5fd 2500w" />
+
+## Use our MCP server
+
+Our documentation includes a built-in **Model Context Protocol (MCP) server** that lets AI applications query the latest docs in real-time.
+
+Our MCP server is available at: `https://docs.langchain.com/mcp`
+
+Once connected, you can ask your AI assistant questions about LangChain, LangGraph, and LangSmith, and it will search our documentation to provide accurate, current answers.
+
+### Connect with Claude Code
+
+If you're using Claude Code, run this command in your terminal:
+
+```bash  theme={null}
+claude mcp add --transport http "docs-langchain" https://docs.langchain.com/mcp
+```
+
+### Connect with Claude Desktop
+
+1. Open Claude Desktop
+2. Go to Settings > Connectors
+3. Add our MCP server URL: `https://docs.langchain.com/mcp`
+
+### Connect with Cursor or VS Code
+
+Add the following to your MCP settings configuration file:
+
+```json  theme={null}
+{
+  "mcpServers": {
+    "docs-langchain": {
+      "url": "https://docs.langchain.com/mcp"
+    }
+  }
+}
+```
+
+## Learn more
+
+For more information about using Mintlify's MCP servers, see the [official Mintlify documentation](https://www.mintlify.com/docs/ai/model-context-protocol).
+
+Have questions or feedback? Let us know in our [community forum](https://forum.langchain.com/).
+
+***
+
+<Callout icon="pen-to-square" iconType="regular">
+  [Edit the source of this page on GitHub.](https://github.com/langchain-ai/docs/edit/main/src/use-these-docs.mdx)
+</Callout>
+
+<Tip icon="terminal" iconType="regular">
+  [Connect these docs programmatically](/use-these-docs) to Claude, VSCode, and more via MCP for    real-time answers.
+</Tip>
