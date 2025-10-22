@@ -2,15 +2,9 @@ import streamlit as st
 import os
 from main import obter_resposta_ia
 
-st.write("--- DEBUGGING SECRETS ---")
-st.write("ZILLIZ_CLUSTER_URI:", os.environ.get("ZILLIZ_CLUSTER_URI"))
-st.write("ZILLIZ_API_TOKEN:", os.environ.get("ZILLIZ_API_TOKEN"))
-st.write("OPENAI_API_KEY:", os.environ.get("OPENAI_API_KEY"))
-st.write("--- END DEBUGGING ---")
+st.set_page_config(page_title="InfoSUS", layout="centered", page_icon="dreamina-bot.ico")
 
-st.set_page_config(page_title="Chatbot de Zoonoses", layout="centered")
-
-st.title("🤖 Chatbot sobre Zoonoses")
+st.markdown("## <span style='color:black;'>Info</span><span style='color:#00008B;'>SUS</span>")
 st.caption("Pergunte ao assistente virtual sobre as informações dos documentos.")
 
 # Inicializa o histórico do chat na sessão
