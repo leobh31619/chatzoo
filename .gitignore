@@ -1,24 +1,78 @@
-# Environment variables
+# Arquivos de ambiente
 .env
-drive/env.txt
-drive/env
+.env.local
+.env.*.local
 
-# Virtual environment
-venv/
-
-# Local database folder (not needed for cloud version)
-db/
-
-# Python cache
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Streamlit config
-.streamlit/
+# Ambientes virtuais
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
 
-# OS-specific
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema operacional
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Large files
-*.pdf
-base/*.txt
+# Logs
+*.log
+logs/
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Arquivos de configuração local
+config.local.py
+settings.local.py
+
+# Arquivos de backup
+*.bak
+*.backup
+
+# Arquivos de dados sensíveis
+*.db
+*.sqlite
+*.sqlite3
+
+# Arquivos de cache
+.cache/
+.pytest_cache/
+
+# Arquivos do Streamlit
+.streamlit/
