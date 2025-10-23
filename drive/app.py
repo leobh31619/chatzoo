@@ -76,7 +76,7 @@ st.markdown("""
 st.markdown("""
 <div class="main-header">
     <h1 class="main-title">🤖 InfoSUS</h1>
-    <p class="main-subtitle">Assistente Virtual Especializado em Zoonoses e Saúde Pública - VERSÃO ATUALIZADA</p>
+    <p class="main-subtitle">Assistente Virtual Especializado em Zoonoses e Saúde Pública - VERSÃO FINAL ATUALIZADA</p>
 </div>
 """, unsafe_allow_html=True)
 
